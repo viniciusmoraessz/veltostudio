@@ -1965,3 +1965,216 @@ body:before {
     font-size: 15px;
   }
 }
+
+/* Mobile reset final: estabiliza layout em iPhone e Android. */
+@media (max-width: 640px) {
+  html,
+  body {
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  .container {
+    width: calc(100% - 32px) !important;
+  }
+
+  .topbar {
+    left: 50% !important;
+    right: auto !important;
+    top: calc(14px + env(safe-area-inset-top)) !important;
+    width: calc(100% - 28px) !important;
+    max-width: 420px !important;
+    height: 58px !important;
+    padding: 0 18px !important;
+    transform: translateX(-50%) !important;
+    border-radius: 999px !important;
+  }
+
+  .topbar.nav-hidden {
+    transform: translate(-50%, calc(-100% - 24px)) !important;
+  }
+
+  .nav-symbol,
+  .topbar .nav-symbol {
+    width: 62px !important;
+    height: 38px !important;
+  }
+
+  .nav-symbol img,
+  .topbar .nav-symbol img {
+    width: 52px !important;
+    height: 32px !important;
+    max-width: 52px !important;
+    max-height: 32px !important;
+    object-fit: contain !important;
+  }
+
+  .menu-toggle {
+    width: 34px !important;
+    height: 34px !important;
+  }
+
+  .mobile-nav {
+    top: calc(82px + env(safe-area-inset-top)) !important;
+    left: 50% !important;
+    right: auto !important;
+    width: calc(100vw - 32px) !important;
+    max-width: 420px !important;
+    transform: translateX(-50%) !important;
+    border-radius: 18px !important;
+  }
+
+  .hero {
+    min-height: auto !important;
+    display: block !important;
+    padding-top: calc(100px + env(safe-area-inset-top)) !important;
+    padding-bottom: 76px !important;
+    overflow: hidden !important;
+  }
+
+  .hero:before {
+    inset: 0 -60% !important;
+    opacity: .34 !important;
+    filter: blur(22px) saturate(1.05) !important;
+  }
+
+  .hero:after {
+    opacity: .78 !important;
+  }
+
+  .hero-content {
+    display: grid !important;
+    justify-items: center !important;
+    padding: 0 !important;
+    text-align: center !important;
+  }
+
+  .hero .kicker {
+    max-width: 300px !important;
+    margin: 0 auto !important;
+    font-size: 9px !important;
+    line-height: 1.7 !important;
+    letter-spacing: .16em !important;
+  }
+
+  .hero h1 {
+    width: 100% !important;
+    max-width: 330px !important;
+    margin: 22px auto 0 !important;
+    font-size: clamp(38px, 11.8vw, 50px) !important;
+    line-height: 1 !important;
+    letter-spacing: -.055em !important;
+    text-wrap: balance;
+  }
+
+  .hero-bottom {
+    width: 100% !important;
+    max-width: 330px !important;
+    margin: 22px auto 0 !important;
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    justify-items: center !important;
+    gap: 20px !important;
+  }
+
+  .hero-bottom p {
+    font-size: 15px !important;
+    line-height: 1.62 !important;
+    max-width: 310px !important;
+  }
+
+  .hero-actions {
+    width: 100% !important;
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 11px !important;
+  }
+
+  .hero-actions .button {
+    width: 100% !important;
+    min-height: 48px !important;
+    padding: 0 18px !important;
+    justify-content: center !important;
+    font-size: 14px !important;
+  }
+
+  section {
+    padding: 72px 0 !important;
+  }
+
+  .section-heading,
+  .statement-layout {
+    grid-template-columns: 1fr !important;
+  }
+
+  .section-heading h2,
+  .statement h2,
+  .contact h2 {
+    font-size: clamp(36px, 11vw, 48px) !important;
+    line-height: 1 !important;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr !important;
+    gap: 38px !important;
+  }
+
+  .project-featured {
+    grid-column: auto !important;
+  }
+
+  .project-art,
+  .project-featured .project-art {
+    aspect-ratio: 1.28 / 1 !important;
+    height: auto !important;
+    border-radius: 18px !important;
+  }
+
+  .project-shot img,
+  .project-featured .project-shot img {
+    inset: 32px 0 0 !important;
+    width: 100% !important;
+    height: calc(100% - 32px) !important;
+    object-fit: contain !important;
+  }
+
+  .project-info {
+    align-items: flex-start !important;
+    gap: 14px !important;
+  }
+
+  .project-info h3 {
+    font-size: 28px !important;
+  }
+
+  .statement-layout,
+  .contact-inner {
+    padding: 24px !important;
+    border-radius: 24px !important;
+  }
+
+  .contact-link {
+    font-size: clamp(23px, 7.6vw, 34px) !important;
+    line-height: 1.08 !important;
+  }
+
+  .footer-inner {
+    display: grid !important;
+    justify-items: start !important;
+    gap: 18px !important;
+  }
+
+  .whatsapp-float {
+    right: 14px !important;
+    bottom: calc(92px + env(safe-area-inset-bottom)) !important;
+    width: 54px !important;
+    height: 54px !important;
+    padding: 0 !important;
+    justify-content: center !important;
+  }
+
+  .whatsapp-float strong {
+    width: 32px !important;
+    height: 32px !important;
+  }
+}
