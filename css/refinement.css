@@ -2392,3 +2392,24 @@ body:before {
   object-fit: contain;
   color: currentColor;
 }
+
+/* Previews ao vivo: os cards exibem os próprios sites, sem screenshots locais. */
+.project-shot iframe {
+  position: absolute;
+  inset: 36px 0 0;
+  z-index: 2;
+  display: block;
+  width: 100%;
+  height: calc(100% - 36px);
+  border: 0;
+  background: #ffffff;
+  pointer-events: none;
+  transform: translateZ(0);
+}
+
+@media (max-width: 640px) {
+  .project-shot iframe {
+    inset: 30px 0 0;
+    height: calc(100% - 30px);
+  }
+}
