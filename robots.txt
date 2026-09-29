@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://veltostudio.com.br/sitemap.xml
