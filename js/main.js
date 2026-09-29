@@ -1,6 +1,4 @@
 const topbar = document.querySelector('.topbar');
-const menuButton = document.querySelector('.menu-toggle');
-const mobileNav = document.querySelector('.mobile-nav');
 let lastScrollY = scrollY;
 
 addEventListener('scroll', () => {
@@ -8,28 +6,9 @@ addEventListener('scroll', () => {
   const scrollingDown = currentScrollY > lastScrollY && currentScrollY > 120;
 
   topbar.classList.toggle('scrolled', currentScrollY > 12);
-  topbar.classList.toggle('nav-hidden', scrollingDown && !mobileNav.classList.contains('open'));
+  topbar.classList.toggle('nav-hidden', scrollingDown);
   lastScrollY = Math.max(currentScrollY, 0);
 }, { passive: true });
-const setMenuOpen = (open) => {
-  mobileNav.classList.toggle('open', open);
-  mobileNav.setAttribute('aria-hidden', String(!open));
-  menuButton.setAttribute('aria-expanded', String(open));
-  menuButton.setAttribute('aria-label', open ? 'Fechar menu' : 'Abrir menu');
-  topbar.classList.remove('nav-hidden');
-};
-
-menuButton.addEventListener('click', () => setMenuOpen(!mobileNav.classList.contains('open')));
-mobileNav.querySelectorAll('a').forEach(link => link.addEventListener('click', () => setMenuOpen(false)));
-document.addEventListener('click', event => {
-  if (mobileNav.classList.contains('open') && !topbar.contains(event.target)) setMenuOpen(false);
-});
-document.addEventListener('keydown', event => {
-  if (event.key === 'Escape' && mobileNav.classList.contains('open')) {
-    setMenuOpen(false);
-    menuButton.focus();
-  }
-});
 
 const revealObserver = new IntersectionObserver(entries => entries.forEach(entry => {
   if (entry.isIntersecting) { entry.target.classList.add('in'); revealObserver.unobserve(entry.target); }
