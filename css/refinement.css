@@ -2378,7 +2378,17 @@ body:before {
     font: 600 11px/1 var(--body);
   }
 
-  .nav-actions .button-small span {
-    font-size: 13px;
+  .nav-actions .button-small .button-arrow {
+    width: 13px;
+    height: 13px;
   }
+}
+
+.button-arrow {
+  display: block;
+  flex: 0 0 auto;
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+  color: currentColor;
 }
