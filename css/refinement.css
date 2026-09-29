@@ -2399,17 +2399,19 @@ body:before {
   inset: 36px 0 0;
   z-index: 2;
   display: block;
-  width: 100%;
-  height: calc(100% - 36px);
+  width: 200%;
+  height: 200%;
   border: 0;
   background: #ffffff;
   pointer-events: none;
-  transform: translateZ(0);
+  transform: scale(.5) translateZ(0);
+  transform-origin: top left;
 }
 
 @media (max-width: 640px) {
   .project-shot iframe {
     inset: 30px 0 0;
-    height: calc(100% - 30px);
+    width: 200%;
+    height: 200%;
   }
 }
