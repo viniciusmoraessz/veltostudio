@@ -1135,6 +1135,10 @@ footer {
 }
 
 /* Referência aplicada: menu cápsula e hero cinematográfico Velto. */
+.hero-title-line {
+  display: block;
+}
+
 .topbar {
   left: 50%;
   right: auto;
@@ -2075,8 +2079,8 @@ body:before {
     -webkit-text-fill-color: #79e9f4;
   }
 
-  .hero h1 .desktop-break {
-    display: none;
+  .hero-title-line {
+    display: inline;
   }
 
   .hero-bottom {
@@ -2166,8 +2170,19 @@ body:before {
   }
 
   .contact-link {
-    font-size: clamp(23px, 7.6vw, 34px) !important;
-    line-height: 1.08 !important;
+    display: block !important;
+    width: 100% !important;
+    padding: 14px 16px !important;
+    border: 1px solid rgba(8, 215, 238, .52) !important;
+    border-radius: 14px;
+    background: rgba(8, 215, 238, .08);
+    font-size: clamp(20px, 6vw, 25px) !important;
+    line-height: 1.3 !important;
+    letter-spacing: -.04em !important;
+  }
+
+  .contact h2 {
+    line-height: 1.12 !important;
   }
 
   .footer-inner {
