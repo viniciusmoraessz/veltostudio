@@ -2065,6 +2065,14 @@ body:before {
     letter-spacing: -.05em !important;
     text-wrap: pretty;
     overflow-wrap: normal;
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff;
+  }
+
+  .hero h1 em {
+    background: none !important;
+    color: #79e9f4 !important;
+    -webkit-text-fill-color: #79e9f4;
   }
 
   .hero h1 .desktop-break {
@@ -2180,5 +2188,36 @@ body:before {
   .whatsapp-float strong {
     width: 32px !important;
     height: 32px !important;
+  }
+}
+
+.whatsapp-float {
+  width: 60px;
+  height: 60px;
+  padding: 0;
+  display: grid;
+  place-items: center;
+  background: #ffffff;
+  border: 1px solid rgba(37, 211, 102, .48);
+  box-shadow: 0 16px 34px rgba(0, 0, 0, .24);
+}
+
+.whatsapp-float img {
+  display: block;
+  width: 38px;
+  height: 38px;
+  object-fit: contain;
+}
+
+@media (max-width: 640px) {
+  .whatsapp-float {
+    width: 56px !important;
+    height: 56px !important;
+    bottom: calc(24px + env(safe-area-inset-bottom)) !important;
+  }
+
+  .whatsapp-float img {
+    width: 36px;
+    height: 36px;
   }
 }
