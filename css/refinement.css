@@ -2394,13 +2394,34 @@ body:before {
 }
 
 /* Previews ao vivo: os cards exibem os próprios sites, sem screenshots locais. */
+.project-card {
+  scroll-margin-top: 110px;
+}
+
+.project-card:focus-visible,
+.contact-link:focus-visible,
+.button:focus-visible,
+.desktop-nav a:focus-visible {
+  outline: 2px solid var(--blue-strong);
+  outline-offset: 5px;
+}
+
+.project-shot {
+  overflow: hidden;
+  contain: paint;
+  isolation: isolate;
+}
+
 .project-shot iframe {
   position: absolute;
-  inset: 36px 0 0;
+  left: 0;
+  top: 36px;
+  right: auto;
+  bottom: auto;
   z-index: 2;
   display: block;
   width: 200%;
-  height: 200%;
+  height: calc(200% - 36px);
   border: 0;
   background: #ffffff;
   pointer-events: none;
@@ -2410,8 +2431,31 @@ body:before {
 
 @media (max-width: 640px) {
   .project-shot iframe {
-    inset: 30px 0 0;
+    top: 30px;
     width: 200%;
-    height: 200%;
+    height: calc(200% - 30px);
+  }
+}
+
+/* A nova prévia mantém a paleta azul/ciano da Velto mesmo enquanto o iframe carrega. */
+.art-sollar {
+  background:
+    radial-gradient(circle at 78% 22%, rgba(0, 220, 255, .62), transparent 34%),
+    linear-gradient(135deg, #071b56 0%, #0c62d9 54%, #0bd4e9 100%);
+}
+
+@media (max-width: 768px) {
+  html { overflow-x: hidden; }
+
+  .work-section,
+  .statement,
+  .contact {
+    overflow: hidden;
+  }
+
+  .section-heading h2,
+  .statement h2,
+  .contact h2 {
+    text-wrap: balance;
   }
 }
