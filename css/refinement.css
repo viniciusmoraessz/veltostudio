@@ -1761,6 +1761,13 @@ body:before {
     drop-shadow(0 8px 18px rgba(0, 0, 0, .18));
 }
 
+@media (min-width: 769px) {
+  .nav-symbol {
+    width: 90px;
+    flex: 0 0 90px;
+  }
+}
+
 .footer-logo {
   width: 160px;
   height: auto;
