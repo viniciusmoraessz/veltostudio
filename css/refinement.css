@@ -2488,11 +2488,16 @@ body:before {
   }
 
   .nav-symbol {
-    width: 86px !important;
+    width: 104px !important;
+    margin-left: -10px !important;
   }
 
   .nav-symbol img {
     width: 86px !important;
+  }
+
+  .desktop-nav {
+    margin-left: 0 !important;
   }
 
   .footer-logo,
