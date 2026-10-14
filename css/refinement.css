@@ -1752,10 +1752,10 @@ body:before {
 }
 
 .nav-symbol img {
-  width: 150px;
+  width: 92px;
   height: auto;
   max-width: none;
-  transform: scale(1.18);
+  transform: none;
   filter:
     drop-shadow(0 0 14px rgba(8, 215, 238, .38))
     drop-shadow(0 8px 18px rgba(0, 0, 0, .18));
@@ -2488,11 +2488,11 @@ body:before {
   }
 
   .nav-symbol {
-    width: 128px !important;
+    width: 86px !important;
   }
 
   .nav-symbol img {
-    width: 128px !important;
+    width: 86px !important;
   }
 
   .footer-logo,
