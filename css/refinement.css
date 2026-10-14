@@ -1752,7 +1752,7 @@ body:before {
 }
 
 .nav-symbol img {
-  width: 108px;
+  width: 132px;
   height: auto;
   max-width: none;
   transform: scale(1.18);
@@ -2488,11 +2488,11 @@ body:before {
   }
 
   .nav-symbol {
-    width: 94px !important;
+    width: 112px !important;
   }
 
   .nav-symbol img {
-    width: 94px !important;
+    width: 112px !important;
   }
 
   .footer-logo,
