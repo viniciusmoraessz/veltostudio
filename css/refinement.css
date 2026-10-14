@@ -2489,7 +2489,7 @@ body:before {
 
   .nav-symbol {
     width: 96px !important;
-    margin-left: -10px !important;
+    margin-left: 2px !important;
   }
 
   .nav-symbol img {
