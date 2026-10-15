@@ -1,26 +1,6 @@
 const topbar = document.querySelector('.topbar');
 let lastScrollY = scrollY;
 
-const menuToggle = document.querySelector('.menu-toggle');
-const mobileNav = document.querySelector('.mobile-nav');
-const closeMobileNav = () => {
-  if (!menuToggle || !mobileNav) return;
-  menuToggle.setAttribute('aria-expanded', 'false');
-  menuToggle.setAttribute('aria-label', 'Abrir menu');
-  mobileNav.classList.remove('open');
-};
-menuToggle?.addEventListener('click', () => {
-  const open = menuToggle.getAttribute('aria-expanded') === 'true';
-  menuToggle.setAttribute('aria-expanded', String(!open));
-  menuToggle.setAttribute('aria-label', open ? 'Abrir menu' : 'Fechar menu');
-  mobileNav?.classList.toggle('open', !open);
-});
-mobileNav?.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMobileNav));
-document.addEventListener('click', event => {
-  if (mobileNav?.classList.contains('open') && !mobileNav.contains(event.target) && !menuToggle?.contains(event.target)) closeMobileNav();
-});
-document.addEventListener('keydown', event => { if (event.key === 'Escape') closeMobileNav(); });
-
 addEventListener('scroll', () => {
   const currentScrollY = scrollY;
   const scrollingDown = currentScrollY > lastScrollY && currentScrollY > 120;
@@ -49,18 +29,3 @@ filters.forEach(filter => filter.addEventListener('click', () => {
   });
   empty.hidden = visible !== 0;
 }));
-
-const routeTitles = {
-  '/': 'Velto Studio — Criação de sites profissionais e portfólios digitais',
-  '/projetos': 'Projetos — Velto Studio',
-  '/processo': 'Processo — Velto Studio',
-  '/faq': 'FAQ — Velto Studio',
-  '/contato': 'Contato — Velto Studio'
-};
-const updateRoute = () => {
-  const route = (location.hash.replace(/^#/, '') || '/').split('/').slice(0, 2).join('/') || '/';
-  document.title = routeTitles[route] || routeTitles['/'];
-  if (route !== '/' && document.getElementById(route.slice(1))) document.getElementById(route.slice(1)).scrollIntoView({ behavior: 'smooth' });
-};
-addEventListener('hashchange', updateRoute);
-updateRoute();
